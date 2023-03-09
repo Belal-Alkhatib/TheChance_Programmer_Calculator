@@ -1,0 +1,52 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ProgrammerCalculator" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/background_button_color</item>
+        <item name="colorPrimaryVariant">@color/background_button_color_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="circleButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:layout_marginBottom">@dimen/mediumSpace</item>
+        <item name="android:layout_marginTop">@dimen/mediumSpace</item>
+        <item name="android:background">@drawable/circle_button</item>
+        <item name="android:textSize">@dimen/txt_sub_title</item>
+    </style>
+
+    <style name="circleButtonStyle.blackText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+    <style name="circleButtonStyle.blackTextWithMargin">
+        <item name="android:layout_marginEnd">@dimen/mediumSpace</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="circleButtonStyle.blueText">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="circleButtonStyle.redText">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="roundedButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:layout_marginEnd">@dimen/mediumSpace</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:background">@drawable/rounded_button</item>
+    </style>
+
+    <style name="roundedButtonStyle.selectedButton">
+        <item name="backgroundTint">@color/blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+</resources>
