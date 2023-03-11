@@ -29,6 +29,7 @@
         android:paddingEnd="@dimen/largeSpace"
         android:paddingBottom="@dimen/largeSpace"
         >
+        <!--
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,13 +61,13 @@
                 android:textColor="@color/white" />
 
         </LinearLayout>
-
+-->
         <TextView
             android:id="@+id/tvResultNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="12,936"
+            android:text=""
             android:textSize="@dimen/txt_super_title"
             android:textStyle="bold"
             android:textColor="@color/white" />
@@ -81,27 +82,38 @@
         android:gravity="center"
         android:layout_marginBottom="@dimen/smallSpace"
         android:layout_marginTop="@dimen/mediumSpace">
-        <Button
+
+        <androidx.appcompat.widget.AppCompatButton            android:id="@+id/btnBin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="BIN"
-            style="@style/roundedButtonStyle"
+            android:textColor="@color/white"
+            android:layout_marginEnd="@dimen/smallSpace"
+            android:background="@drawable/rounded_button"
             />
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="OCT"
-            style="@style/roundedButtonStyle" />
-        <Button
+            android:textColor="@color/white"
+            android:layout_marginEnd="@dimen/smallSpace"
+            android:background="@drawable/rounded_button"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="DEC"
-            style="@style/roundedButtonStyle" />
-        <Button
+            android:textColor="@color/white"
+            android:layout_marginEnd="@dimen/smallSpace"
+            android:background="@drawable/rounded_button"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="HEX"
-            style="@style/roundedButtonStyle.selectedButton"/>
+            android:textColor="@color/white"
+            android:background="@drawable/selected_rounded_button"/>
     </LinearLayout>
 
    <!-- <View
@@ -111,6 +123,7 @@
         android:layout_marginBottom="@dimen/smallSpace" />-->
 
     <LinearLayout
+        android:id="@+id/hexButtonsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/primaryDark"
@@ -118,34 +131,42 @@
         android:orientation="horizontal">
 
         <Button
-            style="@style/circleButtonStyle.blackTextWithMargin"
+            android:id="@+id/btnHex_a"
             android:layout_width="54dp"
             android:layout_height="wrap_content"
-            android:text="A" />
-        <Button
             style="@style/circleButtonStyle.blackTextWithMargin"
+            android:text="A"
+
+            />
+        <Button
+            android:id="@+id/btnHex_b"
             android:layout_width="52dp"
             android:layout_height="52dp"
+            style="@style/circleButtonStyle.blackTextWithMargin"
             android:text="B"/>
         <Button
-            style="@style/circleButtonStyle.blackTextWithMargin"
+            android:id="@+id/btnHex_c"
             android:layout_width="52dp"
             android:layout_height="52dp"
+            style="@style/circleButtonStyle.blackTextWithMargin"
             android:text="C"/>
         <Button
-            style="@style/circleButtonStyle.blackTextWithMargin"
+            android:id="@+id/btnHex_d"
             android:layout_width="52dp"
             android:layout_height="52dp"
+            style="@style/circleButtonStyle.blackTextWithMargin"
             android:text="D"/>
         <Button
-            style="@style/circleButtonStyle.blackTextWithMargin"
+            android:id="@+id/btnHex_e"
             android:layout_width="52dp"
             android:layout_height="52dp"
+            style="@style/circleButtonStyle.blackTextWithMargin"
             android:text="E"/>
         <Button
-            style="@style/circleButtonStyle.blackTextWithMargin"
+            android:id="@+id/btnHex_f"
             android:layout_width="52dp"
             android:layout_height="52dp"
+            style="@style/circleButtonStyle.blackTextWithMargin"
             android:text="F"/>
 
     </LinearLayout>
@@ -176,33 +197,41 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDeleteAll"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:text="AC"
+                    android:text="C"
                     style="@style/circleButtonStyle.blueText" />
-                <Button
-                    style="@style/circleButtonStyle.blackText"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDigit_seven"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:text="7" />
-                <Button
                     style="@style/circleButtonStyle.blackText"
+                    android:text="7"
+                    android:onClick="onClickNumber"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDigit_four"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:text="4" />
-                <Button
                     style="@style/circleButtonStyle.blackText"
+                    android:text="4"
+                    android:onClick="onClickNumber"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDigit_one"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:text="1" />
-                <Button
                     style="@style/circleButtonStyle.blackText"
+                    android:text="1"
+                    android:onClick="onClickNumber"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnRetry"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:drawableBottom="@drawable/ic_refresh"
                     android:paddingBottom="15dp"
                     android:gravity="center"
+                    style="@style/circleButtonStyle.blackText"
                     />
             </LinearLayout>
 
@@ -215,35 +244,44 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnPlusAndMinus"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:text="( )"
+                    android:text="+/-"
                     style="@style/circleButtonStyle.blueText"/>
 
-                <Button
-                    style="@style/circleButtonStyle.blackText"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDigit_eight"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:text="8" />
+                    style="@style/circleButtonStyle.blackText"
+                    android:text="8"
+                    android:onClick="onClickNumber"/>
 
-                <Button
-                    style="@style/circleButtonStyle.blackText"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDigit_five"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:text="5" />
+                    style="@style/circleButtonStyle.blackText"
+                    android:text="5"
+                    android:onClick="onClickNumber"/>
 
-                <Button
-                    style="@style/circleButtonStyle.blackText"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDigit_two"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:text="2" />
+                    style="@style/circleButtonStyle.blackText"
+                    android:text="2"
+                    android:onClick="onClickNumber"/>
 
-                <Button
-                    style="@style/circleButtonStyle.blackText"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDigit_zero"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:text="0" />
+                    style="@style/circleButtonStyle.blackText"
+                    android:text="0"
+                    android:onClick="onClickNumber"/>
             </LinearLayout>
 
             <LinearLayout
@@ -254,36 +292,43 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnPercent"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="%"
-                    style="@style/circleButtonStyle.blueText">
-                </Button>
-                <Button
+                    style="@style/circleButtonStyle.blueText"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDigit_nine"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="9"
-                    style="@style/circleButtonStyle.blackText">
-                </Button>
-                <Button
+                    style="@style/circleButtonStyle.blackText"
+                    android:onClick="onClickNumber"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDigit_six"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="6"
-                    style="@style/circleButtonStyle.blackText">
-                </Button>
-                <Button
+                    style="@style/circleButtonStyle.blackText"
+                    android:onClick="onClickNumber"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDigit_three"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="3"
-                    style="@style/circleButtonStyle.blackText">
-                </Button>
-                <Button
+                    style="@style/circleButtonStyle.blackText"
+                    android:onClick="onClickNumber"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnPoint"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="."
-                    style="@style/circleButtonStyle.blackText">
-                </Button>
+                    style="@style/circleButtonStyle.blackText"/>
+
             </LinearLayout>
 
             <LinearLayout
@@ -293,35 +338,40 @@
                 android:layout_marginEnd="@dimen/mediumSpace"
                 android:gravity="center"
                 android:orientation="vertical">
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnOperation_divide"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="÷"
                     android:textSize="@dimen/txt_super_title"
                     style="@style/circleButtonStyle.redText"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnOperation_multiply"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="×"
                     android:textSize="@dimen/txt_super_title"
                     style="@style/circleButtonStyle.redText"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnOperation_subtract"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="-"
                     android:textSize="@dimen/txt_super_title"
                     style="@style/circleButtonStyle.redText"/>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnOperation_add"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="+"
                     android:textSize="@dimen/txt_super_title"
                     style="@style/circleButtonStyle.redText" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnResult"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="="
