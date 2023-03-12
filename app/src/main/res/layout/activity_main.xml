@@ -11,13 +11,18 @@
     android:paddingEnd="@dimen/largeSpace"
     >
 
-    <View
+    <TextView
+        android:id="@+id/tvResultNumber"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="@color/primaryDark"
+        android:layout_height="0dp"
+        android:paddingTop="@dimen/largeSpace"
         android:layout_weight="1"
-         />
-
+        android:layout_gravity="start|top"
+        android:text=""
+        android:textSize="@dimen/txt_sub_title"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+<!--
     <LinearLayout
         android:id="@+id/resultLayout"
         android:layout_width="match_parent"
@@ -29,7 +34,7 @@
         android:paddingEnd="@dimen/largeSpace"
         android:paddingBottom="@dimen/largeSpace"
         >
-        <!--
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,18 +66,10 @@
                 android:textColor="@color/white" />
 
         </LinearLayout>
--->
-        <TextView
-            android:id="@+id/tvResultNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text=""
-            android:textSize="@dimen/txt_super_title"
-            android:textStyle="bold"
-            android:textColor="@color/white" />
-    </LinearLayout>
 
+
+    </LinearLayout>
+-->
     <LinearLayout
         android:id="@+id/convertingTypeLayout"
         android:layout_width="match_parent"
@@ -136,44 +133,49 @@
             android:layout_height="wrap_content"
             style="@style/circleButtonStyle.blackTextWithMargin"
             android:text="A"
-
+            android:onClick="onClickNumber"
             />
         <Button
             android:id="@+id/btnHex_b"
             android:layout_width="52dp"
             android:layout_height="52dp"
             style="@style/circleButtonStyle.blackTextWithMargin"
-            android:text="B"/>
+            android:text="B"
+            android:onClick="onClickNumber"/>
         <Button
             android:id="@+id/btnHex_c"
             android:layout_width="52dp"
             android:layout_height="52dp"
             style="@style/circleButtonStyle.blackTextWithMargin"
-            android:text="C"/>
+            android:text="C"
+            android:onClick="onClickNumber"/>
         <Button
             android:id="@+id/btnHex_d"
             android:layout_width="52dp"
             android:layout_height="52dp"
             style="@style/circleButtonStyle.blackTextWithMargin"
-            android:text="D"/>
+            android:text="D"
+            android:onClick="onClickNumber"/>
         <Button
             android:id="@+id/btnHex_e"
             android:layout_width="52dp"
             android:layout_height="52dp"
             style="@style/circleButtonStyle.blackTextWithMargin"
-            android:text="E"/>
+            android:text="E"
+            android:onClick="onClickNumber"/>
         <Button
             android:id="@+id/btnHex_f"
             android:layout_width="52dp"
             android:layout_height="52dp"
             style="@style/circleButtonStyle.blackTextWithMargin"
-            android:text="F"/>
+            android:text="F"
+            android:onClick="onClickNumber"/>
 
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:layout_weight="2"
         android:layout_gravity="center"
         android:backgroundTint="@color/primaryLite"
